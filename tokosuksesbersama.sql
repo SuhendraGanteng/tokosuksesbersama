@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `detail_pesanan` (
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table tokosuksesbersama.detail_pesanan: ~8 rows (approximately)
-INSERT INTO `detail_pesanan` (`id`, `id_pesanan`, `id_user`, `id_produk`, `nama_produk`, `harga`, `qty`, `tanggal`) VALUES
+INSERT IGNORE INTO `detail_pesanan` (`id`, `id_pesanan`, `id_user`, `id_produk`, `nama_produk`, `harga`, `qty`, `tanggal`) VALUES
 	(27, 50, 7, 11, 'Kursi Bakso Gold', 46000, 2, '2023-11-13 18:20:51'),
 	(28, 51, 7, 12, 'Kursi Rotan', 110000, 12, '2023-11-15 13:22:29'),
 	(29, 51, 7, 14, 'Gayung Jumbo Warna', 156000, 24, '2023-11-15 13:22:29'),
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `kategori` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table tokosuksesbersama.kategori: ~5 rows (approximately)
-INSERT INTO `kategori` (`id`, `nama`, `slug`, `gambar`) VALUES
+INSERT IGNORE INTO `kategori` (`id`, `nama`, `slug`, `gambar`) VALUES
 	(3, 'Peralatan Mandi', 'peralatan-mandi', '52-Gayung.jpg'),
 	(4, 'Kursi', 'kursi', '663-Kursi Rotan.jpg'),
 	(5, 'Toples', 'toples', '287-Toples.jpg'),
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `kota` (
 ) ENGINE=InnoDB AUTO_INCREMENT=502 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tokosuksesbersama.kota: ~501 rows (approximately)
-INSERT INTO `kota` (`id`, `provinsi_id`, `kota_id`, `nama`) VALUES
+INSERT IGNORE INTO `kota` (`id`, `provinsi_id`, `kota_id`, `nama`) VALUES
 	(1, 21, 1, 'Aceh Barat - (Kabupaten)'),
 	(2, 21, 2, 'Aceh Barat Daya - (Kabupaten)'),
 	(3, 21, 3, 'Aceh Besar - (Kabupaten)'),
@@ -604,7 +604,7 @@ CREATE TABLE IF NOT EXISTS `kurir` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tokosuksesbersama.kurir: ~3 rows (approximately)
-INSERT INTO `kurir` (`id`, `kode`, `nama`) VALUES
+INSERT IGNORE INTO `kurir` (`id`, `kode`, `nama`) VALUES
 	(1, 'jne', 'JNE'),
 	(2, 'pos', 'POS'),
 	(3, 'tiki', 'TIKI');
@@ -620,7 +620,7 @@ CREATE TABLE IF NOT EXISTS `penilaian` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=armscii8 COLLATE=armscii8_bin;
 
 -- Dumping data for table tokosuksesbersama.penilaian: ~5 rows (approximately)
-INSERT INTO `penilaian` (`id`, `id_produk`, `id_user`, `nilai`, `komentar`) VALUES
+INSERT IGNORE INTO `penilaian` (`id`, `id_produk`, `id_user`, `nilai`, `komentar`) VALUES
 	(8, 2, 6, 4, 'mantap bangett dahh saya kasih 4 bintang dulu'),
 	(9, 2, 7, 5, 'paling sedap lah terima kasih toko sukses bersama'),
 	(10, 12, 7, 4, ''),
@@ -652,7 +652,7 @@ CREATE TABLE IF NOT EXISTS `pesanan` (
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table tokosuksesbersama.pesanan: ~6 rows (approximately)
-INSERT INTO `pesanan` (`id`, `id_user`, `no_pesanan`, `no_resi`, `nama`, `no_hp`, `berat`, `kurir`, `layanan`, `total_harga`, `ongkos_kirim`, `total_bayar`, `alamat`, `status`, `snap_token`, `tanggal`, `keterangan`) VALUES
+INSERT IGNORE INTO `pesanan` (`id`, `id_user`, `no_pesanan`, `no_resi`, `nama`, `no_hp`, `berat`, `kurir`, `layanan`, `total_harga`, `ongkos_kirim`, `total_bayar`, `alamat`, `status`, `snap_token`, `tanggal`, `keterangan`) VALUES
 	(50, 7, 'NP1699874451', 'SPXZOEKL15S', 'suhendra', '085171647703', 100, 'jne', 'REG (Layanan Reguler)_14000_3-5', 46000, 14000, 60000, 'fggfgfhg Sekadau - (Kabupaten) Kalimantan Barat', 'Sudah Bayar', 'd7f23653-857d-478a-be16-d62a9e04b6e6', '2023-11-13 18:20:51', 'Pesanan diterima'),
 	(51, 7, 'NP1700029347', 'SPXZOEKL12Z', 'suhendra', '085171647703', 1080, 'tiki', 'REG (Regular Service)_9000_2', 266000, 9000, 275000, 'kota baru Pontianak - (Kabupaten) Kalimantan Barat', 'Sudah Bayar', 'd7b3c1b9-1c55-4f05-ad70-57e00e56624f', '2023-11-15 13:22:27', 'Dalam Pengiriman'),
 	(52, 7, 'NP1700029847', 'SPXZOEKL12A', 'suhendra', '085171647703', 20, 'pos', 'Pos Reguler (Pos Reguler)_21000_4 HARI', 8000, 21000, 29000, 'kota baru Kayong Utara - (Kabupaten) Kalimantan Barat', 'Sudah Bayar', '80f70f16-7fc7-4ed0-a24f-434bf3cc8dd0', '2023-11-15 13:30:47', 'Dalam Pengiriman'),
@@ -683,7 +683,7 @@ CREATE TABLE IF NOT EXISTS `produk` (
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table tokosuksesbersama.produk: ~8 rows (approximately)
-INSERT INTO `produk` (`id`, `id_kategori`, `id_supplier`, `nama`, `slug`, `harga`, `harga_lusin`, `harga_kodi`, `harga_gross`, `stok`, `berat`, `keterangan`, `gambar`) VALUES
+INSERT IGNORE INTO `produk` (`id`, `id_kategori`, `id_supplier`, `nama`, `slug`, `harga`, `harga_lusin`, `harga_kodi`, `harga_gross`, `stok`, `berat`, `keterangan`, `gambar`) VALUES
 	(11, 4, 2, 'Kursi Bakso Gold', 'kursi-bakso-gold', '23000', '120000', '', '', 15, 50, 'Barang Baik', '434-Kursi Bakso Gold.jpg'),
 	(12, 4, 2, 'Kursi Rotan', 'kursi-rotan', '14000', '110000', '', '', 37, 50, 'baik', '848-Kursi Rotan.jpg'),
 	(13, 5, 1, 'Toples 2kg', 'toples-2kg', '8000', '82000', '', '', 59, 20, 'Warnah ditentukan pemilik toko', '542-Toples.jpg'),
@@ -702,7 +702,7 @@ CREATE TABLE IF NOT EXISTS `provinsi` (
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tokosuksesbersama.provinsi: ~34 rows (approximately)
-INSERT INTO `provinsi` (`id`, `provinsi_id`, `nama`) VALUES
+INSERT IGNORE INTO `provinsi` (`id`, `provinsi_id`, `nama`) VALUES
 	(1, 1, 'Bali'),
 	(2, 2, 'Bangka Belitung'),
 	(3, 3, 'Banten'),
@@ -748,7 +748,7 @@ CREATE TABLE IF NOT EXISTS `supplier` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table tokosuksesbersama.supplier: ~2 rows (approximately)
-INSERT INTO `supplier` (`id`, `nama`, `alamat`, `keterangan`) VALUES
+INSERT IGNORE INTO `supplier` (`id`, `nama`, `alamat`, `keterangan`) VALUES
 	(1, 'Shinpo Plastic Houseware Dan Furniture ', ' Jl. Peternakan III No.38, RT.7/RW.1, Kapuk, Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11720', 'Pemasok Produk Plastic'),
 	(2, 'SL PLASTIC', 'Jl.Kamal Raya Outer Ring Road Rukan Golf Lake Venice A-36 Cengkareng Timur, Jakarta Barat', 'Produk Perabotan Rumah Tangga');
 
@@ -764,7 +764,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table tokosuksesbersama.user: ~5 rows (approximately)
-INSERT INTO `user` (`id`, `nama`, `email`, `no_hp`, `password`, `level`) VALUES
+INSERT IGNORE INTO `user` (`id`, `nama`, `email`, `no_hp`, `password`, `level`) VALUES
 	(1, 'Admin E Commerce', 'admin@gmail.com', '0895361152485', '$2y$10$ZxXxQf9MYgyNc4xP2G.1P.4Dbvqt7IhCedMTzM59wT7dKm7jxO4q.', '1'),
 	(2, 'Budi Santoso', 'budi.santoso@example.com', '+62 812-3456-7890', '$2y$10$s97ThShpkJcybcWMKkRItu85u22Esh4b8OXN3zkPdeLO1FDbgIUGW', '2'),
 	(3, 'Rina Dewi', 'rina.dewi@example.com', '+62 813-9876-5432', '$2y$10$s97ThShpkJcybcWMKkRItu85u22Esh4b8OXN3zkPdeLO1FDbgIUGW', '2'),
