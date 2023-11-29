@@ -3,7 +3,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
 
 if($_SESSION['level'] != '1') {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 

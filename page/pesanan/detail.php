@@ -141,7 +141,7 @@ if (isset($_GET['no'])) {
                                     $ratings_query = mysqli_query($koneksi, "SELECT * FROM penilaian WHERE id_produk='$id_produk' AND id_user='$id_user'");
                                     $hasRated = mysqli_num_rows($ratings_query) > 0; // Cek apakah sudah ada penilaian
                                     ?>
-                                    <?php if ($dataPesanan['keterangan'] !== 'Dalam Pengiriman' && !$hasRated && $no == 2) : ?>
+                                    <?php if ($dataPesanan['keterangan'] === 'Dalam Pengiriman' && !$hasRated && $no == 2) : ?>
                                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal_<?= $rowDetailPesanan['id_produk']; ?>">Berikan Penilaian</button>
                                     <?php endif; ?>
                                     <!-- Modal -->
